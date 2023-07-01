@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="Main.HomePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Main"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Unloaded="Page_Unloaded">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="CommonStyleSheet.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <MenuBar x:Name="Menu1" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0">
+            <MenuBarItem x:Name="Chart_code" Title="Chart number">
+                <MenuFlyoutItem x:Name="Insert_sole" Text="Insert" Click="Insert_sole_Click"></MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="Delete_sole" Text="Delete" Click="Delete_sole_Click"></MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="Alter_sole" Text="Alter" Click="Alter_sole_Click"></MenuFlyoutItem>
+            </MenuBarItem>
+            <MenuBarItem x:Name="Chart_codes" Title="multi-Chart numbers">
+                <MenuFlyoutItem x:Name="Update_multi" Text="Update" Click="Update_multi_Click"></MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="Delete_multi" Text="Delete" Click="Delete_multi_Click"></MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="Alter_multi" Text="Alter" Click="Alter_multi_Click"></MenuFlyoutItem>
+                <MenuFlyoutItem x:Name="Insert_multi" Text="Insert" Click="Insert_multi_Click"></MenuFlyoutItem>
+            </MenuBarItem>
+        </MenuBar>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1">
+            <TextBox x:Name="InsertTextBox" Text="This is Chart parameters." Width="600" Style="{StaticResource TextBox_Style}"/>
+            <RepeatButton x:Name="Reset_TextBlock" Click="MyButton_Click" Content="Reset text block" LostFocus="Reset_TextBlock_LostFocus"/>
+            <TextBlock x:Name="TableItems" Text="This is chart numbers displays." Width="600" Style="{StaticResource TextBlock_Style}"/>
+        </StackPanel>
+    </Grid>
+</Page>
